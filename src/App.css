@@ -182,3 +182,41 @@
     border-right-color: var(--border);
   }
 }
+
+.home-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-blob {
+  animation: blob 14s infinite;
+}
+
+.animate-float {
+  animation: float 10s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(18px, -10px) scale(1.05);
+  }
+  66% {
+    transform: translate(-16px, 14px) scale(0.95);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(8deg);
+  }
+}
