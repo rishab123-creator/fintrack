@@ -50,48 +50,7 @@ export default function ContactUsPage({ darkMode, toggleTheme }) {
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto mt-16 space-y-8">
-          {/* Contact Info */}
-          <div className="text-center space-y-4">
-            <h2
-              className={
-                darkMode
-                  ? "text-2xl font-bold text-white"
-                  : "text-2xl font-bold text-slate-800"
-              }
-            >
-              Reach Out
-            </h2>
-            <div className="space-y-3">
-              <p className="flex items-center justify-center gap-3">
-                <span className="text-blue-500 font-semibold">Email:</span>
-                <a href="mailto:fintrack@gmail.com" className="hover:text-blue-500 underline">
-                  fintrack@gmail.com
-                </a>
-              </p>
-              <p>
-                <a 
-                  href="https://www.linkedin.com/company/FinTrack" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-blue-500 font-semibold"
-                >
-                  LinkedIn: FinTrack
-                </a>
-              </p>
-              <p>
-                <a 
-                  href="https://www.instagram.com/fin_track_/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-blue-500 font-semibold"
-                >
-                  Instagram: fin_track_
-                </a>
-              </p>
-            </div>
-          </div>
-
+        <div className="max-w-2xl mx-auto mt-16">
           {/* Contact Form */}
           <div>
             <h2
