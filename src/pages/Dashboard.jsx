@@ -1,6 +1,7 @@
 import Form from "../components/TransactionForm";
 import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
+import FinanceNews from "../components/FinanceNews";
 
 export default function Dashboard({
   balance,
@@ -22,14 +23,16 @@ export default function Dashboard({
         <h1
           className={
             darkMode
-              ? "text-4xl font-bold text-center text-white mb-8"
-              : "text-4xl font-bold text-center text-slate-800 mb-8"
+              ? "text-4xl font-bold text-center text-white mb-6"
+              : "text-4xl font-bold text-center text-slate-800 mb-6"
           }
         >
           FinTrack Dashboard
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+        <FinanceNews darkMode={darkMode} />
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 mt-8">
           <div className={darkMode ? "bg-slate-800 shadow-md rounded-2xl p-5 text-center" : "bg-white shadow-md rounded-2xl p-5 text-center"}>
             <h2 className={darkMode ? "text-lg font-semibold text-slate-300" : "text-lg font-semibold text-slate-600"}>
               Balance

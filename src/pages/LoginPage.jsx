@@ -17,9 +17,9 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6 flex items-center justify-center">
-      <div className="max-w-md w-full bg-white/80 backdrop-blur-xl shadow-2xl rounded-3xl p-8 border border-white/50">
-        <h1 className="text-4xl font-bold text-center text-slate-800 mb-6">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-lime-50 to-emerald-100 p-6 flex items-center justify-center">
+      <div className="max-w-md w-full bg-white/90 backdrop-blur-xl shadow-2xl rounded-3xl p-8 border border-emerald-200/80">
+        <h1 className="text-4xl font-bold text-center text-slate-900 mb-6">
           Welcome Back
         </h1>
         <p className="text-center text-slate-600 mb-8">
@@ -28,13 +28,13 @@ export default function LoginPage() {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label className="block text-sm font-semibold text-slate-700 mb-2">
-              ID
+              Email ID
             </label>
             <input
               type="text"
               value={id}
               onChange={(e) => setId(e.target.value)}
-              className="w-full px-4 py-3 rounded-2xl border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition text-lg"
+              className="w-full px-4 py-3 rounded-2xl border border-emerald-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition text-lg bg-emerald-50"
               required
             />
           </div>
@@ -46,7 +46,7 @@ export default function LoginPage() {
               type="password"
               value={pass}
               onChange={(e) => setPass(e.target.value)}
-              className="w-full px-4 py-3 rounded-2xl border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition text-lg"
+              className="w-full px-4 py-3 rounded-2xl border border-emerald-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition text-lg bg-emerald-50"
               required
             />
           </div>
@@ -55,7 +55,7 @@ export default function LoginPage() {
           )}
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 px-8 rounded-2xl font-semibold text-lg transition-all transform hover:scale-105 shadow-lg"
+            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 px-8 rounded-2xl font-semibold text-lg transition-all transform hover:scale-105 shadow-lg shadow-emerald-300/40"
           >
             Sign In
           </button>
