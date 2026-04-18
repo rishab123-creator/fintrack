@@ -18,29 +18,42 @@ export default function HomePage({ darkMode, toggleTheme }) {
 
         <div className="relative flex min-h-screen w-full overflow-hidden">
           <AnimatedGlobeBackground darkMode={darkMode} />
-          <div className="absolute inset-x-0 top-1/4 overflow-hidden pointer-events-none z-0 flex items-center opacity-[0.04] dark:opacity-[0.06] select-none">
-            <div className="animate-marquee flex gap-12 text-slate-900 dark:text-white">
-              <span className="text-[14rem] md:text-[20rem] font-black uppercase tracking-tighter whitespace-nowrap leading-none">FINTRACK</span>
-              <span className="text-[14rem] md:text-[20rem] font-black uppercase tracking-tighter text-transparent whitespace-nowrap leading-none" style={{WebkitTextStroke: '3px currentColor'}}>FINTRACK</span>
-              <span className="text-[14rem] md:text-[20rem] font-black uppercase tracking-tighter whitespace-nowrap leading-none">FINTRACK</span>
-              <span className="text-[14rem] md:text-[20rem] font-black uppercase tracking-tighter text-transparent whitespace-nowrap leading-none" style={{WebkitTextStroke: '3px currentColor'}}>FINTRACK</span>
+          <div className="absolute inset-x-0 top-1/4 overflow-hidden pointer-events-none z-0 flex items-center opacity-[0.12] dark:opacity-[0.06] select-none">
+            <div className="animate-marquee flex gap-12 text-slate-800 dark:text-white">
+              <span className="text-[14rem] md:text-[20rem] font-black uppercase tracking-tighter whitespace-nowrap leading-none drop-shadow-sm">FINTRACK</span>
+              <span className="text-[14rem] md:text-[20rem] font-black uppercase tracking-tighter text-transparent whitespace-nowrap leading-none drop-shadow-sm" style={{WebkitTextStroke: '3px currentColor'}}>FINTRACK</span>
+              <span className="text-[14rem] md:text-[20rem] font-black uppercase tracking-tighter whitespace-nowrap leading-none drop-shadow-sm">FINTRACK</span>
+              <span className="text-[14rem] md:text-[20rem] font-black uppercase tracking-tighter text-transparent whitespace-nowrap leading-none drop-shadow-sm" style={{WebkitTextStroke: '3px currentColor'}}>FINTRACK</span>
               <span className="text-[14rem] md:text-[20rem] font-black uppercase tracking-tighter whitespace-nowrap leading-none">FINTRACK</span>
               <span className="text-[14rem] md:text-[20rem] font-black uppercase tracking-tighter text-transparent whitespace-nowrap leading-none" style={{WebkitTextStroke: '3px currentColor'}}>FINTRACK</span>
             </div>
           </div><div className="relative flex-1 w-full px-4 lg:px-6 z-10">
             <div className="relative mx-auto max-w-6xl text-center mt-16 px-4 sm:px-0">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className={
-              darkMode
-                ? "text-6xl md:text-7xl font-extrabold text-white mb-6 tracking-tight relative z-10"
-                : "text-6xl md:text-7xl font-extrabold text-slate-900 mb-6 tracking-tight relative z-10"
-            }
-          >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 animate-gradient-text">Welcome to</span> FinTrack
-          </motion.h1>
+          <div className="overflow-hidden w-full mb-6 py-2 relative flex items-center">
+            {/* Soft fade masks on edges for slick entrance/exit */}
+            <div className={`absolute left-0 top-0 w-8 md:w-32 h-full z-20 bg-gradient-to-r ${darkMode ? 'from-slate-950 to-transparent' : 'from-slate-100 to-transparent'} pointer-events-none`}></div>
+            <div className={`absolute right-0 top-0 w-8 md:w-32 h-full z-20 bg-gradient-to-l ${darkMode ? 'from-slate-950 to-transparent' : 'from-slate-100 to-transparent'} pointer-events-none`}></div>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="flex whitespace-nowrap animate-marquee gap-12 md:gap-16 items-center"
+            >
+              {[...Array(8)].map((_, i) => (
+                <h1
+                  key={i}
+                  className={
+                    darkMode
+                      ? "text-6xl md:text-7xl font-extrabold text-white tracking-tight shrink-0"
+                      : "text-6xl md:text-7xl font-extrabold text-slate-900 tracking-tight shrink-0"
+                  }
+                >
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 animate-gradient-text">Welcome to</span> FinTrack
+                </h1>
+              ))}
+            </motion.div>
+          </div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -95,18 +108,10 @@ export default function HomePage({ darkMode, toggleTheme }) {
               <div className="mb-4 inline-flex items-center justify-center rounded-full bg-emerald-500/15 p-3 text-emerald-500">
                 💡
               </div>
-              <h2 className={
-                  darkMode
-                    ? "text-xl font-semibold text-white mb-2"
-                    : "text-xl font-semibold text-slate-900 mb-2"
-                }>
+              <h2 className={darkMode ? "text-xl font-semibold text-white mb-2" : "text-xl font-semibold text-slate-900 mb-2"}>
                 Smart insights
               </h2>
-              <p className={
-                  darkMode
-                    ? "text-sm text-slate-300"
-                    : "text-sm text-slate-600"
-                }>
+              <p className={darkMode ? "text-sm text-slate-300" : "text-sm text-slate-600"}>
                 See your spending patterns, cash flow, and saving opportunities at a glance.
               </p>
             </motion.div>
@@ -119,18 +124,10 @@ export default function HomePage({ darkMode, toggleTheme }) {
               <div className="mb-4 inline-flex items-center justify-center rounded-full bg-emerald-500/15 p-3 text-emerald-500">
                 📊
               </div>
-              <h2 className={
-                  darkMode
-                    ? "text-xl font-semibold text-white mb-2"
-                    : "text-xl font-semibold text-slate-900 mb-2"
-                }>
+              <h2 className={darkMode ? "text-xl font-semibold text-white mb-2" : "text-xl font-semibold text-slate-900 mb-2"}>
                 Budget power
               </h2>
-              <p className={
-                  darkMode
-                    ? "text-sm text-slate-300"
-                    : "text-sm text-slate-600"
-                }>
+              <p className={darkMode ? "text-sm text-slate-300" : "text-sm text-slate-600"}>
                 Create custom budgets, monitor categories, and stay ahead of overspending.
               </p>
             </motion.div>
@@ -143,18 +140,10 @@ export default function HomePage({ darkMode, toggleTheme }) {
               <div className="mb-4 inline-flex items-center justify-center rounded-full bg-emerald-500/15 p-3 text-emerald-500">
                 🔔
               </div>
-              <h2 className={
-                  darkMode
-                    ? "text-xl font-semibold text-white mb-2"
-                    : "text-xl font-semibold text-slate-900 mb-2"
-                }>
+              <h2 className={darkMode ? "text-xl font-semibold text-white mb-2" : "text-xl font-semibold text-slate-900 mb-2"}>
                 Instant alerts
               </h2>
-              <p className={
-                  darkMode
-                    ? "text-sm text-slate-300"
-                    : "text-sm text-slate-600"
-                }>
+              <p className={darkMode ? "text-sm text-slate-300" : "text-sm text-slate-600"}>
                 Stay notified when bills, goals, or key transactions need your attention.
               </p>
             </motion.div>
@@ -167,18 +156,10 @@ export default function HomePage({ darkMode, toggleTheme }) {
               <div className="mb-4 inline-flex items-center justify-center rounded-full bg-emerald-500/15 p-3 text-emerald-500">
                 🔒
               </div>
-              <h2 className={
-                  darkMode
-                    ? "text-xl font-semibold text-white mb-2"
-                    : "text-xl font-semibold text-slate-900 mb-2"
-                }>
+              <h2 className={darkMode ? "text-xl font-semibold text-white mb-2" : "text-xl font-semibold text-slate-900 mb-2"}>
                 Secure control
               </h2>
-              <p className={
-                  darkMode
-                    ? "text-sm text-slate-300"
-                    : "text-sm text-slate-600"
-                }>
+              <p className={darkMode ? "text-sm text-slate-300" : "text-sm text-slate-600"}>
                 Keep all your financial data safe with modern security and private tracking.
               </p>
             </motion.div>
