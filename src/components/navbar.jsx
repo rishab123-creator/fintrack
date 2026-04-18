@@ -29,29 +29,29 @@ export default function Navbar({ darkMode, toggleTheme }) {
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 items-center">
-          <Link to="/" className="hover:text-blue-500 font-medium">
+          <Link to="/" className="hover:text-emerald-500 font-medium transition-colors">
             Home
           </Link>
 
-          <Link to="/dashboard" className="hover:text-blue-500 font-medium">
+          <Link to="/dashboard" className="hover:text-emerald-500 font-medium transition-colors">
             Dashboard
           </Link>
 
-          <Link to="/transactions" className="hover:text-blue-500 font-medium">
+          <Link to="/transactions" className="hover:text-emerald-500 font-medium transition-colors">
             Transactions
           </Link>
 
-          <Link to="/stats" className="hover:text-blue-500 font-medium">
+          <Link to="/stats" className="hover:text-emerald-500 font-medium transition-colors">
             Stats
           </Link>
 
-          <Link to="/contact" className="hover:text-blue-500 font-medium">
+          <Link to="/contact" className="hover:text-emerald-500 font-medium transition-colors">
             Contact
           </Link>
 
           <button
             onClick={toggleTheme}
-            className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-xl font-semibold transition"
+            className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-xl font-semibold transition shadow-md"
           >
             {darkMode ? "Light Mode" : "Dark Mode"}
           </button>

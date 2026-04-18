@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
+import AnimatedGlobeBackground from "../components/AnimatedGlobeBackground";
+import { motion } from "framer-motion";
 
 export default function HomePage({ darkMode, toggleTheme }) {
   return (
@@ -12,55 +14,74 @@ export default function HomePage({ darkMode, toggleTheme }) {
       }
     >
       <div className="relative flex-1 w-full home-hero">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-16 left-10 w-64 h-64 rounded-full bg-emerald-500/20 blur-3xl animate-blob"></div>
-          <div className="absolute top-24 right-0 w-56 h-56 rounded-full bg-emerald-400/20 blur-3xl animate-float"></div>
-          <div className="absolute bottom-10 left-1/3 w-72 h-72 rounded-full bg-slate-700/20 blur-3xl animate-blob animation-delay-2000"></div>
-        </div>
-
         <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
 
-        <div className="relative flex min-h-screen w-full">
-          <div className="relative flex-1 w-full px-4 lg:px-6">
+        <div className="relative flex min-h-screen w-full overflow-hidden">
+          <AnimatedGlobeBackground darkMode={darkMode} />
+          
+
+          
+          <div className="relative flex-1 w-full px-4 lg:px-6 z-10">
             <div className="relative mx-auto max-w-6xl text-center mt-16 px-4 sm:px-0">
-          <h1
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className={
               darkMode
-                ? "text-5xl font-bold text-white mb-6 animate-heading-glow"
-                : "text-5xl font-bold text-slate-900 mb-6 animate-heading-glow"
+                ? "text-6xl md:text-7xl font-extrabold text-white mb-6 tracking-tight relative z-10"
+                : "text-6xl md:text-7xl font-extrabold text-slate-900 mb-6 tracking-tight relative z-10"
             }
           >
-            Welcome to FinTrack
-          </h1>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 animate-gradient-text">Welcome to</span> FinTrack
+          </motion.h1>
 
-          <p
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className={
               darkMode
-                ? "text-xl text-slate-300 mb-6"
-                : "text-xl text-slate-600 mb-6"
+                ? "text-xl md:text-2xl text-slate-300 mb-6 max-w-3xl mx-auto"
+                : "text-xl md:text-2xl text-slate-600 mb-6 max-w-3xl mx-auto"
             }
           >
             Track your money intelligently, get spending insights, and receive investment suggestions that match your goals.
-          </p>
+          </motion.p>
 
-          <p
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.4 }}
             className={
               darkMode
-                ? "text-lg italic text-slate-400 mb-10"
-                : "text-lg italic text-slate-500 mb-10"
+                ? "text-lg italic text-slate-400 mb-10 top-1 relative"
+                : "text-lg italic text-slate-500 mb-10 top-1 relative"
             }
           >
             “FinTrack helps you spot overspending, save smarter, and stay ahead with real-time finance alerts.”
-          </p>
+          </motion.p>
 
-          <Link to="/login">
-            <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-3xl font-semibold text-lg transition shadow-lg shadow-emerald-500/20">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="z-20 relative"
+          >
+            <Link to="/login">
+              <button className="bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-full font-semibold text-lg transition shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:shadow-[0_0_30px_rgba(52,211,153,0.6)]">
               Get Started
             </button>
-          </Link>
+            </Link>
+          </motion.div>
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 text-left relative z-10">
-            <div className={
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8, staggerChildren: 0.1 }}
+            className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 text-left relative z-10"
+          >
+            <motion.div whileHover={{ y: -5 }} className={
                 darkMode
                   ? "rounded-[28px] border-2 border-emerald-200/80 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl animate-glow-card animate-float-card transition duration-300 ease-out translate-y-1 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-emerald-300/20"
                   : "rounded-[28px] border-2 border-emerald-200/80 bg-white/90 p-6 shadow-2xl shadow-emerald-300/20 backdrop-blur-xl animate-glow-card animate-float-card transition duration-300 ease-out translate-y-1 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-emerald-300/20"
@@ -82,9 +103,9 @@ export default function HomePage({ darkMode, toggleTheme }) {
                 }>
                 See your spending patterns, cash flow, and saving opportunities at a glance.
               </p>
-            </div>
+            </motion.div>
 
-            <div className={
+            <motion.div whileHover={{ y: -5 }} className={
                 darkMode
                   ? "rounded-[28px] border-2 border-emerald-200/80 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl animate-glow-card animate-float-card transition duration-300 ease-out translate-y-1 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-emerald-300/20"
                   : "rounded-[28px] border-2 border-emerald-200/80 bg-white/90 p-6 shadow-2xl shadow-emerald-300/20 backdrop-blur-xl animate-glow-card animate-float-card transition duration-300 ease-out translate-y-1 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-emerald-300/20"
@@ -106,9 +127,9 @@ export default function HomePage({ darkMode, toggleTheme }) {
                 }>
                 Create custom budgets, monitor categories, and stay ahead of overspending.
               </p>
-            </div>
+            </motion.div>
 
-            <div className={
+            <motion.div whileHover={{ y: -5 }} className={
                 darkMode
                   ? "rounded-[28px] border-2 border-emerald-200/80 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl animate-glow-card animate-float-card transition duration-300 ease-out translate-y-1 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-emerald-300/20"
                   : "rounded-[28px] border-2 border-emerald-200/80 bg-white/90 p-6 shadow-2xl shadow-emerald-300/20 backdrop-blur-xl animate-glow-card animate-float-card transition duration-300 ease-out translate-y-1 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-emerald-300/20"
@@ -130,9 +151,9 @@ export default function HomePage({ darkMode, toggleTheme }) {
                 }>
                 Stay notified when bills, goals, or key transactions need your attention.
               </p>
-            </div>
+            </motion.div>
 
-            <div className={
+            <motion.div whileHover={{ y: -5 }} className={
                 darkMode
                   ? "rounded-[28px] border-2 border-emerald-200/80 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl animate-glow-card animate-float-card transition duration-300 ease-out translate-y-1 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-emerald-300/20"
                   : "rounded-[28px] border-2 border-emerald-200/80 bg-white/90 p-6 shadow-2xl shadow-emerald-300/20 backdrop-blur-xl animate-glow-card animate-float-card transition duration-300 ease-out translate-y-1 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-emerald-300/20"
@@ -154,10 +175,16 @@ export default function HomePage({ darkMode, toggleTheme }) {
                 }>
                 Keep all your financial data safe with modern security and private tracking.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="mt-16 rounded-[40px] border border-slate-300/70 bg-white/95 p-8 shadow-2xl shadow-emerald-150/20 backdrop-blur-xl transition duration-300 ease-out">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mt-16 rounded-[40px] border border-slate-300/70 bg-white/95 p-8 shadow-2xl shadow-emerald-500/10 backdrop-blur-xl transition duration-300 ease-out"
+          >
             <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] items-center">
               <div className="space-y-5">
                 <span className="inline-flex rounded-full bg-emerald-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
@@ -199,7 +226,7 @@ export default function HomePage({ darkMode, toggleTheme }) {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
           </div>
         </div>
