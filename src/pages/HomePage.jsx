@@ -26,8 +26,8 @@ export default function HomePage({ darkMode, toggleTheme }) {
           <h1
             className={
               darkMode
-                ? "text-5xl font-bold text-white mb-6"
-                : "text-5xl font-bold text-slate-900 mb-6"
+                ? "text-5xl font-bold text-white mb-6 animate-heading-glow"
+                : "text-5xl font-bold text-slate-900 mb-6 animate-heading-glow"
             }
           >
             Welcome to FinTrack
@@ -40,7 +40,7 @@ export default function HomePage({ darkMode, toggleTheme }) {
                 : "text-xl text-slate-600 mb-6"
             }
           >
-            Track your money. Control your spending. Build better habits.
+            Track your money intelligently, get spending insights, and receive investment suggestions that match your goals.
           </p>
 
           <p
@@ -50,7 +50,7 @@ export default function HomePage({ darkMode, toggleTheme }) {
                 : "text-lg italic text-slate-500 mb-10"
             }
           >
-            “Beware of little expenses; a small leak will sink a great ship.”
+            “FinTrack helps you spot overspending, save smarter, and stay ahead with real-time finance alerts.”
           </p>
 
           <Link to="/login">
@@ -62,8 +62,8 @@ export default function HomePage({ darkMode, toggleTheme }) {
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 text-left relative z-10">
             <div className={
                 darkMode
-                  ? "rounded-[28px] border border-white/10 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl"
-                  : "rounded-[28px] border border-slate-200/80 bg-white/90 p-6 shadow-2xl shadow-slate-300/20 backdrop-blur-xl"
+                  ? "rounded-[28px] border-2 border-emerald-200/80 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl animate-glow-card animate-float-card transition duration-300 ease-out translate-y-1 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-emerald-300/20"
+                  : "rounded-[28px] border-2 border-emerald-200/80 bg-white/90 p-6 shadow-2xl shadow-emerald-300/20 backdrop-blur-xl animate-glow-card animate-float-card transition duration-300 ease-out translate-y-1 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-emerald-300/20"
               }>
               <div className="mb-4 inline-flex items-center justify-center rounded-full bg-emerald-500/15 p-3 text-emerald-500">
                 💡
@@ -86,8 +86,8 @@ export default function HomePage({ darkMode, toggleTheme }) {
 
             <div className={
                 darkMode
-                  ? "rounded-[28px] border border-white/10 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl"
-                  : "rounded-[28px] border border-slate-200/80 bg-white/90 p-6 shadow-2xl shadow-slate-300/20 backdrop-blur-xl"
+                  ? "rounded-[28px] border-2 border-emerald-200/80 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl animate-glow-card animate-float-card transition duration-300 ease-out translate-y-1 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-emerald-300/20"
+                  : "rounded-[28px] border-2 border-emerald-200/80 bg-white/90 p-6 shadow-2xl shadow-emerald-300/20 backdrop-blur-xl animate-glow-card animate-float-card transition duration-300 ease-out translate-y-1 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-emerald-300/20"
               }>
               <div className="mb-4 inline-flex items-center justify-center rounded-full bg-emerald-500/15 p-3 text-emerald-500">
                 📊
@@ -110,8 +110,8 @@ export default function HomePage({ darkMode, toggleTheme }) {
 
             <div className={
                 darkMode
-                  ? "rounded-[28px] border border-white/10 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl"
-                  : "rounded-[28px] border border-slate-200/80 bg-white/90 p-6 shadow-2xl shadow-slate-300/20 backdrop-blur-xl"
+                  ? "rounded-[28px] border-2 border-emerald-200/80 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl animate-glow-card animate-float-card transition duration-300 ease-out translate-y-1 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-emerald-300/20"
+                  : "rounded-[28px] border-2 border-emerald-200/80 bg-white/90 p-6 shadow-2xl shadow-emerald-300/20 backdrop-blur-xl animate-glow-card animate-float-card transition duration-300 ease-out translate-y-1 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-emerald-300/20"
               }>
               <div className="mb-4 inline-flex items-center justify-center rounded-full bg-emerald-500/15 p-3 text-emerald-500">
                 🔔
@@ -134,8 +134,8 @@ export default function HomePage({ darkMode, toggleTheme }) {
 
             <div className={
                 darkMode
-                  ? "rounded-[28px] border border-white/10 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl"
-                  : "rounded-[28px] border border-slate-200/80 bg-white/90 p-6 shadow-2xl shadow-slate-300/20 backdrop-blur-xl"
+                  ? "rounded-[28px] border-2 border-emerald-200/80 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl animate-glow-card animate-float-card transition duration-300 ease-out translate-y-1 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-emerald-300/20"
+                  : "rounded-[28px] border-2 border-emerald-200/80 bg-white/90 p-6 shadow-2xl shadow-emerald-300/20 backdrop-blur-xl animate-glow-card animate-float-card transition duration-300 ease-out translate-y-1 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-emerald-300/20"
               }>
               <div className="mb-4 inline-flex items-center justify-center rounded-full bg-emerald-500/15 p-3 text-emerald-500">
                 🔒
@@ -154,6 +154,50 @@ export default function HomePage({ darkMode, toggleTheme }) {
                 }>
                 Keep all your financial data safe with modern security and private tracking.
               </p>
+            </div>
+          </div>
+
+          <div className="mt-16 rounded-[40px] border border-slate-300/70 bg-white/95 p-8 shadow-2xl shadow-emerald-150/20 backdrop-blur-xl transition duration-300 ease-out">
+            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] items-center">
+              <div className="space-y-5">
+                <span className="inline-flex rounded-full bg-emerald-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
+                  How FinTrack works
+                </span>
+                <h2 className="text-4xl font-bold text-slate-900">
+                  Smarter tracking, better suggestions, real-time alerts.
+                </h2>
+                <p className="text-slate-700 text-lg">
+                  FinTrack automatically categorizes your spending, monitors cash flow, and recommends the best actions based on your habits and market conditions.
+                </p>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-3xl bg-slate-50 p-5 shadow-lg shadow-slate-200/20 border border-slate-300/80 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-emerald-200/30">
+                    <p className="text-sm uppercase tracking-[0.24em] text-slate-900 font-semibold">Track spending</p>
+                    <p className="mt-2 text-sm text-slate-700">Your transactions are sorted automatically so you see every expense clearly.</p>
+                  </div>
+                  <div className="rounded-3xl bg-slate-50 p-5 shadow-lg shadow-slate-200/20 border border-slate-300/80 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-emerald-200/30">
+                    <p className="text-sm uppercase tracking-[0.24em] text-slate-900 font-semibold">Smart suggestions</p>
+                    <p className="mt-2 text-sm text-slate-700">Get practical saving and investment advice designed for your financial goals.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative rounded-[32px] bg-white p-8 shadow-2xl shadow-emerald-150/20 border border-slate-300/80 animate-glow-card animate-float-card transition duration-300 ease-out hover:-translate-y-1">
+                <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-emerald-400/20 to-transparent blur-3xl pointer-events-none"></div>
+                <div className="relative space-y-5">
+                  <div className="rounded-3xl bg-emerald-50 p-5 border border-slate-300/70 shadow-sm shadow-slate-200/10 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-emerald-200/20">
+                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-900">Real-time alerts</p>
+                    <p className="mt-2 text-sm text-slate-700">Receive instant alerts on overspending, goal progress, and market shifts.</p>
+                  </div>
+                  <div className="rounded-3xl bg-slate-50 p-5 border border-slate-300/70 shadow-sm shadow-slate-200/10 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-emerald-200/20">
+                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-900">Market pulse</p>
+                    <p className="mt-2 text-sm text-slate-700">See finance market trends and get alerts when your portfolio should adapt.</p>
+                  </div>
+                  <div className="rounded-3xl bg-white p-5 border border-slate-300/70 shadow-sm shadow-slate-200/10 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-emerald-200/20">
+                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-900">Goal planning</p>
+                    <p className="mt-2 text-sm text-slate-700">Set savings targets and let FinTrack keep you on the right path.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
