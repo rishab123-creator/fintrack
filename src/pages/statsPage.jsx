@@ -49,53 +49,57 @@ export default function StatsPage({
   return (
     <div
       className={
-        darkMode ? "min-h-screen bg-slate-900 p-6" : "min-h-screen bg-slate-100 p-6"
+        darkMode ? "min-h-screen bg-slate-900 flex flex-col" : "min-h-screen bg-slate-100 flex flex-col"
       }
     >
-      <div className="max-w-4xl mx-auto">
+      {/* Full-width Navbar Container */}
+      <div className="w-full pt-6 px-4 sm:px-6 lg:px-8 z-10 relative">
         <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
+      </div>
 
+      {/* Main Content Boxed */}
+      <div className="flex-1 max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8 mt-2 pb-12">
         <h1
           className={
             darkMode
-              ? "text-4xl font-bold text-center text-white mb-8"
-              : "text-4xl font-bold text-center text-slate-800 mb-8"
+              ? "text-4xl font-bold text-center text-white mb-8 mt-4"
+              : "text-4xl font-bold text-center text-slate-800 mb-8 mt-4"
           }
         >
           FinTrack Statistics
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
-          <div className={darkMode ? "bg-slate-800 shadow-md rounded-2xl p-5 text-center" : "bg-white shadow-md rounded-2xl p-5 text-center"}>
-            <h2 className={darkMode ? "text-lg font-semibold text-slate-300" : "text-lg font-semibold text-slate-600"}>Balance</h2>
-            <p className="text-2xl font-bold text-blue-500">₹{Math.round(balance)}</p>
+          <div className={darkMode ? "bg-slate-800 shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1" : "bg-white shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1"}>
+            <h2 className={darkMode ? "text-sm font-semibold text-slate-400 uppercase tracking-wider" : "text-sm font-semibold text-slate-500 uppercase tracking-wider"}>Balance</h2>
+            <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mt-1">₹{Math.round(balance)}</p>
           </div>
 
-          <div className={darkMode ? "bg-slate-800 shadow-md rounded-2xl p-5 text-center" : "bg-white shadow-md rounded-2xl p-5 text-center"}>
-            <h2 className={darkMode ? "text-lg font-semibold text-slate-300" : "text-lg font-semibold text-slate-600"}>Total Income</h2>
-            <p className="text-2xl font-bold text-green-500">₹{Math.round(income)}</p>
+          <div className={darkMode ? "bg-slate-800 shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1" : "bg-white shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1"}>
+            <h2 className={darkMode ? "text-sm font-semibold text-slate-400 uppercase tracking-wider" : "text-sm font-semibold text-slate-500 uppercase tracking-wider"}>Total Income</h2>
+            <p className="text-2xl font-bold text-emerald-500 mt-1">₹{Math.round(income)}</p>
           </div>
 
-          <div className={darkMode ? "bg-slate-800 shadow-md rounded-2xl p-5 text-center" : "bg-white shadow-md rounded-2xl p-5 text-center"}>
-            <h2 className={darkMode ? "text-lg font-semibold text-slate-300" : "text-lg font-semibold text-slate-600"}>Total Expense</h2>
-            <p className="text-2xl font-bold text-red-500">₹{Math.round(expense)}</p>
+          <div className={darkMode ? "bg-slate-800 shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1" : "bg-white shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1"}>
+            <h2 className={darkMode ? "text-sm font-semibold text-slate-400 uppercase tracking-wider" : "text-sm font-semibold text-slate-500 uppercase tracking-wider"}>Total Expense</h2>
+            <p className="text-2xl font-bold text-rose-500 mt-1">₹{Math.round(expense)}</p>
           </div>
 
-          <div className={darkMode ? "bg-slate-800 shadow-md rounded-2xl p-5 text-center" : "bg-white shadow-md rounded-2xl p-5 text-center"}>
-            <h2 className={darkMode ? "text-lg font-semibold text-slate-300" : "text-lg font-semibold text-slate-600"}>Total Transactions</h2>
-            <p className={darkMode ? "text-2xl font-bold text-white" : "text-2xl font-bold text-slate-800"}>
+          <div className={darkMode ? "bg-slate-800 shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1" : "bg-white shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1"}>
+            <h2 className={darkMode ? "text-sm font-semibold text-slate-400 uppercase tracking-wider" : "text-sm font-semibold text-slate-500 uppercase tracking-wider"}>Total Transactions</h2>
+            <p className={darkMode ? "text-2xl font-bold text-white mt-1" : "text-2xl font-bold text-slate-800 mt-1"}>
               {transactions.length}
             </p>
           </div>
 
-          <div className={darkMode ? "bg-slate-800 shadow-md rounded-2xl p-5 text-center" : "bg-white shadow-md rounded-2xl p-5 text-center"}>
-            <h2 className={darkMode ? "text-lg font-semibold text-slate-300" : "text-lg font-semibold text-slate-600"}>Highest Income</h2>
-            <p className="text-2xl font-bold text-green-500">₹{Math.round(highestIncome)}</p>
+          <div className={darkMode ? "bg-slate-800 shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1" : "bg-white shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1"}>
+            <h2 className={darkMode ? "text-sm font-semibold text-slate-400 uppercase tracking-wider" : "text-sm font-semibold text-slate-500 uppercase tracking-wider"}>Highest Income</h2>
+            <p className="text-2xl font-bold text-emerald-500 mt-1">₹{Math.round(highestIncome)}</p>
           </div>
 
-          <div className={darkMode ? "bg-slate-800 shadow-md rounded-2xl p-5 text-center" : "bg-white shadow-md rounded-2xl p-5 text-center"}>
-            <h2 className={darkMode ? "text-lg font-semibold text-slate-300" : "text-lg font-semibold text-slate-600"}>Highest Expense</h2>
-            <p className="text-2xl font-bold text-red-500">₹{Math.round(highestExpense)}</p>
+          <div className={darkMode ? "bg-slate-800 shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1" : "bg-white shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1"}>
+            <h2 className={darkMode ? "text-sm font-semibold text-slate-400 uppercase tracking-wider" : "text-sm font-semibold text-slate-500 uppercase tracking-wider"}>Highest Expense</h2>
+            <p className="text-2xl font-bold text-rose-500 mt-1">₹{Math.round(highestExpense)}</p>
           </div>
         </div>
 
@@ -106,9 +110,9 @@ export default function StatsPage({
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {Object.entries(expenseByCategory).map(([cat, amt]) => (
-              <div key={cat} className={darkMode ? "bg-slate-800 shadow-md rounded-2xl p-5" : "bg-white shadow-md rounded-2xl p-5"}>
-                <h4 className={darkMode ? "text-lg font-semibold text-slate-300 mb-2" : "text-lg font-semibold text-slate-600 mb-2"}>{cat}</h4>
-                <p className="text-2xl font-bold text-red-500">₹{Math.round(amt)}</p>
+              <div key={cat} className={darkMode ? "bg-slate-800 shadow-md rounded-2xl p-5 flex items-center justify-between" : "bg-white shadow-md rounded-2xl p-5 flex items-center justify-between"}>
+                <h4 className={darkMode ? "text-lg font-semibold text-slate-300" : "text-lg font-semibold text-slate-600"}>{cat}</h4>
+                <p className="text-xl font-bold text-rose-500">₹{Math.round(amt)}</p>
               </div>
             ))}
           </div>
@@ -116,22 +120,24 @@ export default function StatsPage({
 
         {/* Time based */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
-          <div className={darkMode ? "bg-slate-800 shadow-md rounded-2xl p-5 text-center" : "bg-white shadow-md rounded-2xl p-5 text-center"}>
-            <h2 className={darkMode ? "text-lg font-semibold text-slate-300" : "text-lg font-semibold text-slate-600"}>Weekly Expense</h2>
-            <p className="text-2xl font-bold text-red-500">₹{Math.round(weeklyExpense)}</p>
+          <div className={darkMode ? "bg-slate-800 shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1" : "bg-white shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1"}>
+            <h2 className={darkMode ? "text-sm font-semibold text-slate-400 uppercase tracking-wider" : "text-sm font-semibold text-slate-500 uppercase tracking-wider"}>Weekly Expense</h2>
+            <p className="text-2xl font-bold text-rose-500 mt-1">₹{Math.round(weeklyExpense)}</p>
           </div>
 
-          <div className={darkMode ? "bg-slate-800 shadow-md rounded-2xl p-5 text-center" : "bg-white shadow-md rounded-2xl p-5 text-center"}>
-            <h2 className={darkMode ? "text-lg font-semibold text-slate-300" : "text-lg font-semibold text-slate-600"}>Monthly Expense</h2>
-            <p className="text-2xl font-bold text-red-500">₹{Math.round(monthlyExpense)}</p>
+          <div className={darkMode ? "bg-slate-800 shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1" : "bg-white shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1"}>
+            <h2 className={darkMode ? "text-sm font-semibold text-slate-400 uppercase tracking-wider" : "text-sm font-semibold text-slate-500 uppercase tracking-wider"}>Monthly Expense</h2>
+            <p className="text-2xl font-bold text-rose-500 mt-1">₹{Math.round(monthlyExpense)}</p>
           </div>
 
-          <div className={darkMode ? "bg-slate-800 shadow-md rounded-2xl p-5 text-center" : "bg-white shadow-md rounded-2xl p-5 text-center"}>
-            <h2 className={darkMode ? "text-lg font-semibold text-slate-300" : "text-lg font-semibold text-slate-600"}>Yearly Expense</h2>
-            <p className="text-2xl font-bold text-red-500">₹{Math.round(yearlyExpense)}</p>
+          <div className={darkMode ? "bg-slate-800 shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1" : "bg-white shadow-md rounded-3xl p-5 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1"}>
+            <h2 className={darkMode ? "text-sm font-semibold text-slate-400 uppercase tracking-wider" : "text-sm font-semibold text-slate-500 uppercase tracking-wider"}>Yearly Expense</h2>
+            <p className="text-2xl font-bold text-rose-500 mt-1">₹{Math.round(yearlyExpense)}</p>
           </div>
         </div>
+      </div>
 
+      <div className="mt-auto">
         <Footer darkMode={darkMode} />
       </div>
     </div>

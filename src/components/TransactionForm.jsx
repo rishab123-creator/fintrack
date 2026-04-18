@@ -58,14 +58,14 @@ export default function Form({ addTransaction, darkMode }) {
           placeholder="Enter Amount"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-400"
         />
 
         <input
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-400"
         />
 
         <select
@@ -76,7 +76,7 @@ export default function Form({ addTransaction, darkMode }) {
             setCustomCategory("");
             setShowCustomCategory(false);
           }}
-          className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-400"
         >
           <option value="expense">Expense</option>
           <option value="income">Income</option>
@@ -85,7 +85,7 @@ export default function Form({ addTransaction, darkMode }) {
         <select
           value={category}
           onChange={handleCategoryChange}
-          className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-400"
         >
           <option value="">Select Category</option>
           {categories.map((cat) => (
@@ -100,13 +100,13 @@ export default function Form({ addTransaction, darkMode }) {
             placeholder="Enter custom category name"
             value={customCategory}
             onChange={(e) => setCustomCategory(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-400"
           />
         )}
 
         <button
           onClick={handleAdd}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition"
+          className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 rounded-xl transition"
           disabled={!input || !date || (!category && !customCategory)}
         >
           Add Transaction

@@ -20,15 +20,18 @@ export default function ContactUsPage({ darkMode, toggleTheme }) {
     <div
       className={
         darkMode
-          ? "min-h-screen flex flex-col bg-slate-900 p-6"
-          : "min-h-screen flex flex-col bg-slate-100 p-6"
+          ? "min-h-screen flex flex-col bg-slate-900"
+          : "min-h-screen flex flex-col bg-slate-100"
       }
     >
-      <div className="flex-1 max-w-5xl mx-auto w-full">
-        
+      {/* Full-width Navbar Container */}
+      <div className="w-full pt-6 px-4 sm:px-6 lg:px-8 z-10 relative">
         <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
+      </div>
 
-        <div className="text-center mt-16">
+      {/* Main Content Boxed */}
+      <div className="flex-1 max-w-5xl mx-auto w-full px-4 sm:px-6 lg:px-8 mt-2 pb-12">
+        <div className="text-center mt-8">
           <h1
             className={
               darkMode
@@ -50,9 +53,9 @@ export default function ContactUsPage({ darkMode, toggleTheme }) {
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto mt-16">
+        <div className="max-w-2xl mx-auto mt-8">
           {/* Contact Form */}
-          <div>
+          <div className={darkMode ? "bg-slate-800 shadow-md rounded-3xl p-8" : "bg-white shadow-md rounded-3xl p-8"}>
             <h2
               className={
                 darkMode
@@ -73,8 +76,8 @@ export default function ContactUsPage({ darkMode, toggleTheme }) {
                   required
                   className={`w-full px-4 py-3 rounded-xl border ${
                     darkMode
-                      ? "bg-slate-800 border-slate-600 text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none"
-                      : "bg-white border-slate-300 text-slate-800 placeholder-slate-500 focus:border-blue-500 focus:outline-none"
+                      ? "bg-slate-700/50 border-slate-600 text-white placeholder-slate-400 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 focus:outline-none"
+                      : "bg-slate-50 border-slate-300 text-slate-800 placeholder-slate-500 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                   }`}
                 />
               </div>
@@ -88,8 +91,8 @@ export default function ContactUsPage({ darkMode, toggleTheme }) {
                   required
                   className={`w-full px-4 py-3 rounded-xl border ${
                     darkMode
-                      ? "bg-slate-800 border-slate-600 text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none"
-                      : "bg-white border-slate-300 text-slate-800 placeholder-slate-500 focus:border-blue-500 focus:outline-none"
+                      ? "bg-slate-700/50 border-slate-600 text-white placeholder-slate-400 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 focus:outline-none"
+                      : "bg-slate-50 border-slate-300 text-slate-800 placeholder-slate-500 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                   }`}
                 />
               </div>
@@ -101,16 +104,16 @@ export default function ContactUsPage({ darkMode, toggleTheme }) {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className={`w-full px-4 py-3 rounded-xl border resize-vertical ${
+                  className={`w-full px-4 py-3 rounded-xl border resize-y ${
                     darkMode
-                      ? "bg-slate-800 border-slate-600 text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none"
-                      : "bg-white border-slate-300 text-slate-800 placeholder-slate-500 focus:border-blue-500 focus:outline-none"
+                      ? "bg-slate-700/50 border-slate-600 text-white placeholder-slate-400 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 focus:outline-none"
+                      : "bg-slate-50 border-slate-300 text-slate-800 placeholder-slate-500 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 focus:outline-none"
                   }`}
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition"
+                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition shadow-md mt-4"
               >
                 Send Message
               </button>
@@ -120,7 +123,9 @@ export default function ContactUsPage({ darkMode, toggleTheme }) {
 
       </div>
 
-      <Footer darkMode={darkMode} />
+      <div className="mt-auto">
+        <Footer darkMode={darkMode} />
+      </div>
     </div>
   );
 }

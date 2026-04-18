@@ -24,3 +24,24 @@ body {
   background-size: 200% 200%;
   animation: gradient-x 4s ease infinite;
 }
+
+@keyframes border-glow {
+  0% { border-color: #064e3b; box-shadow: 0 0 10px rgba(6, 78, 59, 0.2); }
+  50% { border-color: #10b981; box-shadow: 0 0 25px rgba(16, 185, 129, 0.7); }
+  100% { border-color: #064e3b; box-shadow: 0 0 10px rgba(6, 78, 59, 0.2); }
+}
+
+.animate-border-glow {
+  animation: border-glow 3s infinite ease-in-out;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+  display: flex;
+  width: max-content;
+}

@@ -18,10 +18,16 @@ export default function HomePage({ darkMode, toggleTheme }) {
 
         <div className="relative flex min-h-screen w-full overflow-hidden">
           <AnimatedGlobeBackground darkMode={darkMode} />
-          
-
-          
-          <div className="relative flex-1 w-full px-4 lg:px-6 z-10">
+          <div className="absolute inset-x-0 top-1/4 overflow-hidden pointer-events-none z-0 flex items-center opacity-[0.04] dark:opacity-[0.06] select-none">
+            <div className="animate-marquee flex gap-12 text-slate-900 dark:text-white">
+              <span className="text-[14rem] md:text-[20rem] font-black uppercase tracking-tighter whitespace-nowrap leading-none">FINTRACK</span>
+              <span className="text-[14rem] md:text-[20rem] font-black uppercase tracking-tighter text-transparent whitespace-nowrap leading-none" style={{WebkitTextStroke: '3px currentColor'}}>FINTRACK</span>
+              <span className="text-[14rem] md:text-[20rem] font-black uppercase tracking-tighter whitespace-nowrap leading-none">FINTRACK</span>
+              <span className="text-[14rem] md:text-[20rem] font-black uppercase tracking-tighter text-transparent whitespace-nowrap leading-none" style={{WebkitTextStroke: '3px currentColor'}}>FINTRACK</span>
+              <span className="text-[14rem] md:text-[20rem] font-black uppercase tracking-tighter whitespace-nowrap leading-none">FINTRACK</span>
+              <span className="text-[14rem] md:text-[20rem] font-black uppercase tracking-tighter text-transparent whitespace-nowrap leading-none" style={{WebkitTextStroke: '3px currentColor'}}>FINTRACK</span>
+            </div>
+          </div><div className="relative flex-1 w-full px-4 lg:px-6 z-10">
             <div className="relative mx-auto max-w-6xl text-center mt-16 px-4 sm:px-0">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -181,47 +187,48 @@ export default function HomePage({ darkMode, toggleTheme }) {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
+
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mt-16 rounded-[40px] border border-slate-300/70 bg-white/95 p-8 shadow-2xl shadow-emerald-500/10 backdrop-blur-xl transition duration-300 ease-out"
+            className="mt-16 rounded-[40px] border-[3px] animate-border-glow bg-white/95 p-8 backdrop-blur-xl transition duration-300 ease-out"
           >
             <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] items-center">
-              <div className="space-y-5">
-                <span className="inline-flex rounded-full bg-emerald-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
-                  How FinTrack works
-                </span>
-                <h2 className="text-4xl font-bold text-slate-900">
-                  Smarter tracking, better suggestions, real-time alerts.
-                </h2>
-                <p className="text-slate-700 text-lg">
-                  FinTrack automatically categorizes your spending, monitors cash flow, and recommends the best actions based on your habits and market conditions.
-                </p>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-3xl bg-slate-50 p-5 shadow-lg shadow-slate-200/20 border border-slate-300/80 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-emerald-200/30">
-                    <p className="text-sm uppercase tracking-[0.24em] text-slate-900 font-semibold">Track spending</p>
-                    <p className="mt-2 text-sm text-slate-700">Your transactions are sorted automatically so you see every expense clearly.</p>
-                  </div>
-                  <div className="rounded-3xl bg-slate-50 p-5 shadow-lg shadow-slate-200/20 border border-slate-300/80 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-emerald-200/30">
-                    <p className="text-sm uppercase tracking-[0.24em] text-slate-900 font-semibold">Smart suggestions</p>
-                    <p className="mt-2 text-sm text-slate-700">Get practical saving and investment advice designed for your financial goals.</p>
-                  </div>
-                </div>
+               <div className="space-y-5">
+                 <span className="inline-flex rounded-full bg-emerald-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-800">
+                   How FinTrack works
+                 </span>
+                 <h2 className="text-4xl font-bold text-slate-900">
+                   Smarter tracking, better suggestions, real-time alerts.
+                 </h2>
+                 <p className="text-slate-800 font-medium text-lg">
+                   FinTrack automatically categorizes your spending, monitors cash flow, and recommends the best actions based on your habits and market conditions.
+                 </p>
+                 <div className="grid gap-4 sm:grid-cols-2">
+                   <div className="rounded-3xl bg-slate-50 p-5 shadow-lg shadow-slate-200/20 border border-slate-300/80 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-emerald-200/30">
+                     <p className="text-sm uppercase tracking-[0.24em] text-slate-900 font-bold">Track spending</p>
+                     <p className="mt-2 text-sm text-slate-800 font-medium">Your transactions are sorted automatically so you see every expense clearly.</p>
+                   </div>
+                   <div className="rounded-3xl bg-slate-50 p-5 shadow-lg shadow-slate-200/20 border border-slate-300/80 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-emerald-200/30">
+                     <p className="text-sm uppercase tracking-[0.24em] text-slate-900 font-bold">Smart suggestions</p>
+                     <p className="mt-2 text-sm text-slate-800 font-medium">Get practical saving and investment advice designed for your financial goals.</p>
+                   </div>
+                 </div>
               </div>
 
               <div className="relative rounded-[32px] bg-white p-8 shadow-2xl shadow-emerald-150/20 border border-slate-300/80 animate-glow-card animate-float-card transition duration-300 ease-out hover:-translate-y-1">
                 <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-emerald-400/20 to-transparent blur-3xl pointer-events-none"></div>
                 <div className="relative space-y-5">
                   <div className="rounded-3xl bg-emerald-50 p-5 border border-slate-300/70 shadow-sm shadow-slate-200/10 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-emerald-200/20">
-                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-900">Real-time alerts</p>
-                    <p className="mt-2 text-sm text-slate-700">Receive instant alerts on overspending, goal progress, and market shifts.</p>
+                    <p className="text-sm font-bold uppercase tracking-[0.24em] text-slate-900">Real-time alerts</p>
+                    <p className="mt-2 text-sm text-slate-800 font-medium">Receive instant alerts on overspending, goal progress, and market shifts.</p>
                   </div>
                   <div className="rounded-3xl bg-slate-50 p-5 border border-slate-300/70 shadow-sm shadow-slate-200/10 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-emerald-200/20">
-                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-900">Market pulse</p>
-                    <p className="mt-2 text-sm text-slate-700">See finance market trends and get alerts when your portfolio should adapt.</p>
+                    <p className="text-sm font-bold uppercase tracking-[0.24em] text-slate-900">Market pulse</p>
+                    <p className="mt-2 text-sm text-slate-800 font-medium">See finance market trends and get alerts when your portfolio should adapt.</p>
                   </div>
                   <div className="rounded-3xl bg-white p-5 border border-slate-300/70 shadow-sm shadow-slate-200/10 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-emerald-200/20">
-                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-900">Goal planning</p>
-                    <p className="mt-2 text-sm text-slate-700">Set savings targets and let FinTrack keep you on the right path.</p>
+                    <p className="text-sm font-bold uppercase tracking-[0.24em] text-slate-900">Goal planning</p>
+                    <p className="mt-2 text-sm text-slate-800 font-medium">Set savings targets and let FinTrack keep you on the right path.</p>
                   </div>
                 </div>
               </div>

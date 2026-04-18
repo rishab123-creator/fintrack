@@ -11,17 +11,21 @@ export default function TransactionsPage({
   return (
     <div
       className={
-        darkMode ? "min-h-screen bg-slate-900 p-6" : "min-h-screen bg-slate-100 p-6"
+        darkMode ? "min-h-screen bg-slate-900 flex flex-col" : "min-h-screen bg-slate-100 flex flex-col"
       }
     >
-      <div className="max-w-3xl mx-auto">
+      {/* Full-width Navbar Container */}
+      <div className="w-full pt-6 px-4 sm:px-6 lg:px-8 z-10 relative">
         <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
+      </div>
 
+      {/* Main Content Boxed */}
+      <div className="flex-1 max-w-5xl mx-auto w-full px-4 sm:px-6 lg:px-8 mt-2 pb-12">
         <h1
           className={
             darkMode
-              ? "text-4xl font-bold text-center text-white mb-8"
-              : "text-4xl font-bold text-center text-slate-800 mb-8"
+              ? "text-4xl font-bold text-center text-white mb-8 mt-4"
+              : "text-4xl font-bold text-center text-slate-800 mb-8 mt-4"
           }
         >
           Transaction History
@@ -32,6 +36,9 @@ export default function TransactionsPage({
           deleteTransaction={deleteTransaction}
           darkMode={darkMode}
         />
+      </div>
+
+      <div className="mt-auto">
         <Footer darkMode={darkMode} />
       </div>
     </div>
