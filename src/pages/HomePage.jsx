@@ -7,11 +7,11 @@ export default function HomePage({ darkMode, toggleTheme }) {
     <div
       className={
         darkMode
-          ? "min-h-screen flex flex-col bg-slate-950 p-6"
-          : "min-h-screen flex flex-col bg-slate-100 p-6"
+          ? "min-h-screen flex flex-col bg-slate-950 px-0 overflow-x-hidden"
+          : "min-h-screen flex flex-col bg-slate-100 px-0 overflow-x-hidden"
       }
     >
-      <div className="relative flex-1 max-w-6xl mx-auto w-full home-hero">
+      <div className="relative flex-1 w-full home-hero">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-16 left-10 w-64 h-64 rounded-full bg-emerald-500/20 blur-3xl animate-blob"></div>
           <div className="absolute top-24 right-0 w-56 h-56 rounded-full bg-emerald-400/20 blur-3xl animate-float"></div>
@@ -20,7 +20,9 @@ export default function HomePage({ darkMode, toggleTheme }) {
 
         <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
 
-        <div className="relative text-center mt-16 px-4 sm:px-0">
+        <div className="relative flex min-h-screen w-full">
+          <div className="relative flex-1 w-full px-4 lg:px-6">
+            <div className="relative mx-auto max-w-6xl text-center mt-16 px-4 sm:px-0">
           <h1
             className={
               darkMode
@@ -153,6 +155,8 @@ export default function HomePage({ darkMode, toggleTheme }) {
                 Keep all your financial data safe with modern security and private tracking.
               </p>
             </div>
+          </div>
+        </div>
           </div>
         </div>
       </div>

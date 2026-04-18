@@ -1,0 +1,13 @@
+<svg width="120" height="120" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="240" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#167F47" />
+      <stop offset="1" stop-color="#4BBF6B" />
+    </linearGradient>
+  </defs>
+  <path d="M60 20H180L220 80V160L180 220H60L20 160V80L60 20Z" stroke="url(#gradient)" stroke-width="18" fill="none" />
+  <path d="M112 80C112 74.4772 116.477 70 122 70H133C138.523 70 143 74.4772 143 80V103.774C150.158 106.34 156 112.682 156 120C156 131.046 147.046 140 136 140H125C119.477 140 115 135.523 115 130V123C115 118.582 118.582 115 123 115H132C136.418 115 140 118.582 140 123V130" stroke="#167F47" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M117 95H128" stroke="#167F47" stroke-width="10" stroke-linecap="round" />
+  <path d="M80 85H160" stroke="#167F47" stroke-width="12" stroke-linecap="round" />
+  <text x="120" y="192" text-anchor="middle" font-family="Inter, sans-serif" font-size="32" font-weight="700" fill="#167F47">F</text>
+</svg>
